@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:listicle/utilities/constant.dart';
+import 'package:listicle/widget/checkbox.dart';
 import 'package:listicle/widget/text_field.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -48,6 +49,29 @@ class SignUpScreen extends StatelessWidget {
                     hintText: '*********',
                     obscureText: true,
                   ),
+                  Row(
+                    children: [
+                      CustomCheckbox(
+                        label: "",
+                      ),
+                      Text(
+                        'I agree with',
+                        style: AppTextStyles.checkBoxLabelText,
+                      ),
+                      Text(
+                        ' Terms',
+                        style: AppTextStyles.checkBoxLabelTextBold,
+                      ),
+                      Text(
+                        ' &',
+                        style: AppTextStyles.checkBoxLabelText,
+                      ),
+                      Text(
+                        ' Privacy',
+                        style: AppTextStyles.checkBoxLabelTextBold,
+                      )
+                    ],
+                  )
                 ],
               ),
             ),

@@ -30,6 +30,16 @@ class AppTextStyles {
     fontWeight: FontWeight.bold,
     color: AppColors.blue,
   );
+  static const checkBoxLabelText = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColors.blue,
+  );
+  static const checkBoxLabelTextBold = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+    color: AppColors.blue,
+  );
   static const labelTitle = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w500,

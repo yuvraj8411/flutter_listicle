@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:listicle/component/custom_button.dart';
 import 'package:listicle/component/custom_text_button.dart';
+import 'package:listicle/screen/sign_up_screen.dart';
 import 'package:listicle/utilities/constant.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -34,7 +35,13 @@ class SplashScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 30, right: 30, top: 50),
               child: CustomButton(
                 text: 'Sign Up',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SignUpScreen()),
+                  );
+                },
               ),
             ),
             const SizedBox(height: 10),

@@ -25,8 +25,19 @@ class AppTextStyles {
     color: AppColors.black,
   );
 
-  static const body = TextStyle(
+  static const appBarTitle = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    color: AppColors.blue,
+  );
+  static const labelTitle = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: AppColors.blue,
+  );
+  static const hintText = TextStyle(
     fontSize: 16,
-    color: AppColors.darkGrey,
+    color: AppColors.grey,
+    fontWeight: FontWeight.w400,
   );
 }

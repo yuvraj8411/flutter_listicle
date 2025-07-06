@@ -1,7 +1,7 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
-import 'package:listicle/screen/splashscreen.dart';
+import 'package:listicle/screen/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:listicle/utilities/constant.dart';
 
-class CustomTextField extends StatelessWidget {
+class CustomTextField extends StatefulWidget {
   final String label;
   final String hintText;
   final TextEditingController? controller;
@@ -18,21 +18,34 @@ class CustomTextField extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<CustomTextField> createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  late bool _obscureText;
+
+  @override
+  void initState() {
+    super.initState();
+    _obscureText = widget.obscureText;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          label,
+          widget.label,
           style: AppTextStyles.labelTitle,
         ),
         const SizedBox(height: 10),
         TextField(
-          controller: controller,
-          obscureText: obscureText,
-          keyboardType: keyboardType,
+          controller: widget.controller,
+          obscureText: _obscureText,
+          keyboardType: widget.keyboardType,
           decoration: InputDecoration(
-            hintText: hintText,
+            hintText: widget.hintText,
             hintStyle: AppTextStyles.hintText,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.0),
@@ -41,6 +54,20 @@ class CustomTextField extends StatelessWidget {
                 width: 0.5,
               ),
             ),
+            suffixIcon: widget.obscureText
+                ? IconButton(
+                    icon: Image.asset(
+                      _obscureText ? 'assets/eye.png' : 'assets/eye_closed.png',
+                      width: 20,
+                      height: 20,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        _obscureText = !_obscureText;
+                      });
+                    },
+                  )
+                : null,
             contentPadding:
                 const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
           ),

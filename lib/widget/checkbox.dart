@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:listicle/utilities/constant.dart';
 
 class CustomCheckbox extends StatefulWidget {
   final String label;

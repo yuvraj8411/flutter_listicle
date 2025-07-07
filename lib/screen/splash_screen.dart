@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:listicle/component/custom_button.dart';
 import 'package:listicle/component/custom_text_button.dart';
+import 'package:listicle/screen/sign_in_screen.dart';
 import 'package:listicle/screen/sign_up_screen.dart';
 import 'package:listicle/utilities/constant.dart';
 
@@ -47,7 +48,12 @@ class SplashScreen extends StatelessWidget {
             const SizedBox(height: 10),
             CustomTextButton(
               text: 'Sign In',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SignInScreen()),
+                );
+              },
             ),
           ],
         ),

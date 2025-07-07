@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:listicle/component/custom_button.dart';
-import 'package:listicle/screen/sign_in_screen.dart';
 import 'package:listicle/utilities/constant.dart';
-import 'package:listicle/widget/checkbox.dart';
 import 'package:listicle/widget/text_field.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +16,8 @@ class SignUpScreen extends StatelessWidget {
             Row(
               children: [
                 IconButton(
-                  icon: Image.asset(
-                    'assets/auth_back.png',
+                  icon: const Image(
+                    image: AssetImage('assets/auth_back.png'),
                     width: 20,
                     height: 20,
                   ),
@@ -31,15 +29,10 @@ class SignUpScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const CustomTextField(
-                    label: 'Name',
-                    hintText: 'Yuvraj Baravkar',
-                  ),
-                  const SizedBox(height: 20),
                   const CustomTextField(
                     label: 'E-mail',
                     hintText: 'yuvrajbaravkar84@gmail.com',
@@ -51,41 +44,12 @@ class SignUpScreen extends StatelessWidget {
                     hintText: '*********',
                     obscureText: true,
                   ),
-                  const Row(
-                    children: [
-                      CustomCheckbox(
-                        label: "",
-                      ),
-                      Text(
-                        'I agree with',
-                        style: AppTextStyles.checkBoxLabelText,
-                      ),
-                      Text(
-                        ' Terms',
-                        style: AppTextStyles.checkBoxLabelTextBold,
-                      ),
-                      Text(
-                        ' &',
-                        style: AppTextStyles.checkBoxLabelText,
-                      ),
-                      Text(
-                        ' Privacy',
-                        style: AppTextStyles.checkBoxLabelTextBold,
-                      ),
-                    ],
-                  ),
                   const SizedBox(height: 40),
                   CustomButton(
-                    text: 'Sign Up',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SignInScreen()),
-                      );
-                    },
+                    text: 'Sign In',
+                    onPressed: () {},
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 40),
                   const Row(
                     children: [
                       Expanded(
@@ -96,7 +60,7 @@ class SignUpScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "Or sign up with",
+                        "Or sign in with",
                         style: AppTextStyles.checkBoxLabelTextBold,
                       ),
                       Expanded(
@@ -120,19 +84,15 @@ class SignUpScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        'Already have an account?',
+                        "Don't have an account?",
                         style: AppTextStyles.checkBoxLabelText,
                       ),
                       TextButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const SignInScreen()),
-                          );
+                          Navigator.pop(context);
                         },
                         child: const Text(
-                          'Sign In',
+                          'Sign Up',
                           style: AppTextStyles.checkBoxLabelTextBold,
                         ),
                       ),

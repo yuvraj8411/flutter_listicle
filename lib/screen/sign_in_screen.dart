@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:listicle/component/custom_button.dart';
+import 'package:listicle/screen/home_screen.dart';
 import 'package:listicle/utilities/constant.dart';
 import 'package:listicle/widget/text_field.dart';
 
@@ -47,7 +48,12 @@ class SignInScreen extends StatelessWidget {
                   const SizedBox(height: 40),
                   CustomButton(
                     text: 'Sign In',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeScreen()));
+                    },
                   ),
                   const SizedBox(height: 40),
                   const Row(

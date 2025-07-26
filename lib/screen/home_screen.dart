@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:listicle/screen/tab_home_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,7 +12,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   static const List<Widget> _pages = <Widget>[
-    Center(child: Text('Home')),
+    Center(child: TabHomeScreen()),
     Center(child: Text('Search')),
     Center(child: Text('Profile')),
   ];
